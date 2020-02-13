@@ -1,7 +1,7 @@
-rebar3 riak_core template
-=========================
+rebar3 riak_core_lite template
+==============================
 
-A `rebar3 <http://rebar3.org>`_ template for riak_core applications.
+A `rebar3 <http://rebar3.org>`_ template for riak_core_lite applications.
 
 Setup
 -----
@@ -11,7 +11,7 @@ Setup
 then install this template::
 
     mkdir -p ~/.config/rebar3/templates
-    git clone https://github.com/marianoguerra/rebar3_template_riak_core.git ~/.config/rebar3/templates/rebar3_template_riak_core
+    git clone https://github.com/riak-core-lite/rebar3_template_riak_core_lite.git ~/.config/rebar3/templates/rebar3_template_riak_core_lite
 
 Use
 ---
@@ -20,7 +20,7 @@ Use
 
     mkdir ricor
     cd ricor
-    rebar3 new rebar3_riak_core name=ricor
+    rebar3 new rebar3_riak_core_lite name=ricor
     rebar3 release
     rebar3 run
 
