@@ -19,6 +19,7 @@ Use
 ::
 
     rebar3 new rebar3_riak_core_lite name=ricor
+    cd ricor
     rebar3 release
 
     (ricor@127.0.0.1)1> ricor:ping().
