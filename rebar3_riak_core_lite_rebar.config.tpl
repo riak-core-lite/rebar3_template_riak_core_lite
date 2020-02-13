@@ -1,11 +1,12 @@
 %% -*- mode: erlang; -*-
-{deps, [recon, {riak_core, {pkg, riak_core_lite}}]}.
+{deps, [{riak_core, {pkg, riak_core_lite}}]}.
 
 {relx, [{release, { {{ name }} , "0.1.0"},
          [{{ name }}, sasl]},
 
         {dev_mode, true},
         {include_erts, false},
+        {extended_start_script, true},
 
         {overlay_vars, "config/vars.config"},
         {overlay, [
