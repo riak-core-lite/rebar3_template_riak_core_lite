@@ -1,7 +1,7 @@
 %% -*- erlang -*-
 {application, {{ name }},
  [
-  {description, "A Riak Core Application"},
+  {description, "A Riak Core Lite Application"},
   {vsn, "1"},
   {registered, []},
   {applications, [
@@ -9,7 +9,6 @@
                   stdlib,
                   sasl,
                   riak_core,
-                  setup
                  ]},
   {mod, { {{ name }}_app, []}},
   {env, []}
