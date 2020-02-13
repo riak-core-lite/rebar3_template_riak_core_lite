@@ -1,4 +1,3 @@
-{cuttlefish_conf, "{{ name }}.conf"}.
 {rel_name, "{{ name }}"}.
 {node, "{{ name }}@127.0.0.1"}.
 

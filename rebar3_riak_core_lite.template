@@ -9,7 +9,6 @@
 {template, "rebar3_riak_core_lite.erl.tpl", "{{name}}/apps/{{name}}/src/{{name}}.erl"}.
 {template, "rebar3_riak_core_lite_app.erl.tpl", "{{name}}/apps/{{name}}/src/{{name}}_app.erl"}.
 {template, "rebar3_riak_core_lite_sup.erl.tpl", "{{name}}/apps/{{name}}/src/{{name}}_sup.erl"}.
-{template, "rebar3_riak_core_lite_console.erl.tpl", "{{name}}/apps/{{name}}/src/{{name}}_console.erl"}.
 {template, "rebar3_riak_core_lite_vnode.erl.tpl", "{{name}}/apps/{{name}}/src/{{name}}_vnode.erl"}.
 {template, "rebar3_riak_core_lite_rebar.config.tpl", "{{name}}/rebar.config"}.
 {template, "rebar3_riak_core_lite_editorconfig.tpl", "{{name}}/.editorconfig"}.
@@ -17,15 +16,8 @@
 {template, "rebar3_riak_core_lite_README.rst.tpl", "{{name}}/README.rst"}.
 {template, "rebar3_riak_core_lite_Makefile.tpl", "{{name}}/Makefile"}.
 
-{file, "rebar3_riak_core_lite_admin_runner", "{{name}}/config/admin_bin"}.
-{template, "rebar3_riak_core_lite_config.schema.tpl", "{{name}}/priv/01-{{name}}.schema"}.
 {template, "rebar3_riak_core_lite_advanced.config.tpl", "{{name}}/config/advanced.config"}.
-{file, "rebar3_riak_core_lite.lager.schema", "{{name}}/config/lager.schema"}.
-{file, "rebar3_riak_core_lite.riak_core.schema", "{{name}}/config/riak_core.schema"}.
-{file, "rebar3_riak_core_lite.erlang_vm.schema", "{{name}}/config/erlang_vm.schema"}.
 {template, "rebar3_riak_core_lite_vars.config.tpl", "{{name}}/config/vars.config"}.
 {template, "rebar3_riak_core_lite_vars_dev1.config.tpl", "{{name}}/config/vars_dev1.config"}.
 {template, "rebar3_riak_core_lite_vars_dev2.config.tpl", "{{name}}/config/vars_dev2.config"}.
 {template, "rebar3_riak_core_lite_vars_dev3.config.tpl", "{{name}}/config/vars_dev3.config"}.
-
-{chmod, "{{name}}/config/admin_bin", 8#744}.

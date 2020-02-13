@@ -18,11 +18,8 @@ Use
 
 ::
 
-    mkdir ricor
-    cd ricor
     rebar3 new rebar3_riak_core_lite name=ricor
     rebar3 release
-    rebar3 run
 
     (ricor@127.0.0.1)1> ricor:ping().
     {pong,981946412581700398168100746981252653831329677312}
