@@ -11,7 +11,6 @@ SHELL = /bin/bash
 release:
 	$(REBAR) release
 	mkdir -p $(RELPATH)/../{{ name }}_config
-	[ -f $(RELPATH)/../{{ name }}_config/{{ name }}.conf ] || cp $(RELPATH)/etc/{{ name }}.conf  $(RELPATH)/../{{ name }}_config/{{ name }}.conf
 	[ -f $(RELPATH)/../{{ name }}_config/advanced.config ] || cp $(RELPATH)/etc/advanced.config  $(RELPATH)/../{{ name }}_config/advanced.config
 
 console:
@@ -20,7 +19,6 @@ console:
 prod-release:
 	$(REBAR) as prod release
 	mkdir -p $(PRODRELPATH)/../{{ name }}_config
-	[ -f $(PRODRELPATH)/../{{ name }}_config/{{ name }}.conf ] || cp $(PRODRELPATH)/etc/{{ name }}.conf  $(PRODRELPATH)/../{{ name }}_config/{{ name }}.conf
 	[ -f $(PRODRELPATH)/../{{ name }}_config/advanced.config ] || cp $(PRODRELPATH)/etc/advanced.config  $(PRODRELPATH)/../{{ name }}_config/advanced.config
 
 prod-console:
@@ -38,19 +36,16 @@ test:
 devrel1:
 	$(REBAR) as dev1 release
 	mkdir -p $(DEV1RELPATH)/../{{ name }}_config
-	[ -f $(DEV1RELPATH)/../{{ name }}_config/{{ name }}.conf ] || cp $(DEV1RELPATH)/etc/{{ name }}.conf  $(DEV1RELPATH)/../{{ name }}_config/{{ name }}.conf
 	[ -f $(DEV1RELPATH)/../{{ name }}_config/advanced.config ] || cp $(DEV1RELPATH)/etc/advanced.config  $(DEV1RELPATH)/../{{ name }}_config/advanced.config
 
 devrel2:
 	$(REBAR) as dev2 release
 	mkdir -p $(DEV2RELPATH)/../{{ name }}_config
-	[ -f $(DEV2RELPATH)/../{{ name }}_config/{{ name }}.conf ] || cp $(DEV2RELPATH)/etc/{{ name }}.conf  $(DEV2RELPATH)/../{{ name }}_config/{{ name }}.conf
 	[ -f $(DEV2RELPATH)/../{{ name }}_config/advanced.config ] || cp $(DEV2RELPATH)/etc/advanced.config  $(DEV2RELPATH)/../{{ name }}_config/advanced.config
 
 devrel3:
 	$(REBAR) as dev3 release
 	mkdir -p $(DEV3RELPATH)/../{{ name }}_config
-	[ -f $(DEV3RELPATH)/../{{ name }}_config/{{ name }}.conf ] || cp $(DEV3RELPATH)/etc/{{ name }}.conf  $(DEV3RELPATH)/../{{ name }}_config/{{ name }}.conf
 	[ -f $(DEV3RELPATH)/../{{ name }}_config/advanced.config ] || cp $(DEV3RELPATH)/etc/advanced.config  $(DEV3RELPATH)/../{{ name }}_config/advanced.config
 
 devrel: devrel1 devrel2 devrel3
