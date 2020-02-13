@@ -8,7 +8,7 @@
                   kernel,
                   stdlib,
                   sasl,
-                  riak_core,
+                  riak_core
                  ]},
   {mod, { {{ name }}_app, []}},
   {env, []}

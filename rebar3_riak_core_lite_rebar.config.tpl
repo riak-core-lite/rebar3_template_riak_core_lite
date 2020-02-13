@@ -13,7 +13,6 @@
             {mkdir, "bin"},
             {mkdir, "data/ring"},
             {mkdir, "log/sasl"},
-            {template, "./config/admin_bin", "bin/{{ name }}-admin"},
             {template, "./config/advanced.config", "etc/advanced.config"}
         ]}
 ]}.
