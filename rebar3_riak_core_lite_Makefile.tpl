@@ -11,7 +11,6 @@ SHELL = /bin/bash
 release:
 	$(REBAR) release
 	mkdir -p $(RELPATH)/../{{ name }}_config
-	[ -f $(RELPATH)/../{{ name }}_config/advanced.config ] || cp $(RELPATH)/etc/advanced.config  $(RELPATH)/../{{ name }}_config/advanced.config
 
 console:
 	cd $(RELPATH) && ./bin/{{ name }} console
@@ -19,7 +18,6 @@ console:
 prod-release:
 	$(REBAR) as prod release
 	mkdir -p $(PRODRELPATH)/../{{ name }}_config
-	[ -f $(PRODRELPATH)/../{{ name }}_config/advanced.config ] || cp $(PRODRELPATH)/etc/advanced.config  $(PRODRELPATH)/../{{ name }}_config/advanced.config
 
 prod-console:
 	cd $(PRODRELPATH) && ./bin/{{ name }} console
@@ -36,17 +34,14 @@ test:
 devrel1:
 	$(REBAR) as dev1 release
 	mkdir -p $(DEV1RELPATH)/../{{ name }}_config
-	[ -f $(DEV1RELPATH)/../{{ name }}_config/advanced.config ] || cp $(DEV1RELPATH)/etc/advanced.config  $(DEV1RELPATH)/../{{ name }}_config/advanced.config
 
 devrel2:
 	$(REBAR) as dev2 release
 	mkdir -p $(DEV2RELPATH)/../{{ name }}_config
-	[ -f $(DEV2RELPATH)/../{{ name }}_config/advanced.config ] || cp $(DEV2RELPATH)/etc/advanced.config  $(DEV2RELPATH)/../{{ name }}_config/advanced.config
 
 devrel3:
 	$(REBAR) as dev3 release
 	mkdir -p $(DEV3RELPATH)/../{{ name }}_config
-	[ -f $(DEV3RELPATH)/../{{ name }}_config/advanced.config ] || cp $(DEV3RELPATH)/etc/advanced.config  $(DEV3RELPATH)/../{{ name }}_config/advanced.config
 
 devrel: devrel1 devrel2 devrel3
 
@@ -75,13 +70,13 @@ devrel-start:
 	for d in $(BASEDIR)/_build/dev*; do $$d/rel/{{ name }}/bin/$(APPNAME) start; done
 
 devrel-join:
-	for d in $(BASEDIR)/_build/dev{2,3}; do $$d/rel/{{ name }}/bin/$(APPNAME)-admin cluster join {{ name }}1@127.0.0.1; done
+	for d in $(BASEDIR)/_build/dev{2,3}; do $$d/rel/{{ name }}/bin/$(APPNAME) eval 'riak_core:join("{{ name }}1@127.0.0.1")'; done
 
 devrel-cluster-plan:
-	$(BASEDIR)/_build/dev1/rel/{{ name }}/bin/$(APPNAME)-admin cluster plan
+	$(BASEDIR)/_build/dev1/rel/{{ name }}/bin/$(APPNAME) eval 'riak_core_claimant:plan()'
 
 devrel-cluster-commit:
-	$(BASEDIR)/_build/dev1/rel/{{ name }}/bin/$(APPNAME)-admin cluster commit
+	$(BASEDIR)/_build/dev1/rel/{{ name }}/bin/$(APPNAME) eval 'riak_core_claimant:commit()'
 
 devrel-status:
 	$(BASEDIR)/_build/dev1/rel/{{ name }}/bin/$(APPNAME)-admin member-status

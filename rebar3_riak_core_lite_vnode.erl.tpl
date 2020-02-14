@@ -33,7 +33,7 @@ init([Partition]) ->
 
 %% Sample command: respond to a ping
 handle_command(ping, _Sender, State) ->
-    {reply, {pong, State#state.partition}, State};
+    {reply, {pong, node(), State#state.partition}, State};
 handle_command(Message, _Sender, State) ->
     logger:warning("unhandled_command ~p", [Message]),
     {noreply, State}.

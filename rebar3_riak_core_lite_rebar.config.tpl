@@ -8,19 +8,29 @@
         {include_erts, false},
         {extended_start_script, true},
 
-        {overlay_vars, "config/vars.config"},
+        {sys_config, "config/sys.config"},
+        {vm_args, "config/vm.args"},
+
         {overlay, [
             {mkdir, "etc"},
             {mkdir, "bin"},
             {mkdir, "data/ring"},
-            {mkdir, "log/sasl"},
-            {template, "./config/advanced.config", "etc/advanced.config"}
+            {mkdir, "log/sasl"}
         ]}
 ]}.
 
 {profiles, [
     {prod, [{relx, [{dev_mode, false}, {include_erts, true}]}]},
-    {dev1, [{relx, [{overlay_vars, ["config/vars.config", "config/vars_dev1.config"]}]}]},
-    {dev2, [{relx, [{overlay_vars, ["config/vars.config", "config/vars_dev2.config"]}]}]},
-    {dev3, [{relx, [{overlay_vars, ["config/vars.config", "config/vars_dev3.config"]}]}]}
+    {dev1, [{relx, [
+                {sys_config, "config/sys_dev1.config"},
+                {vm_args, "config/vm_dev1.args"}
+    ]}]},
+    {dev2, [{relx, [
+                {sys_config, "config/sys_dev2.config"},
+                {vm_args, "config/vm_dev2.args"}
+    ]}]},
+    {dev3, [{relx, [
+                {sys_config, "config/sys_dev3.config"},
+                {vm_args, "config/vm_dev3.args"}
+    ]}]}
 ]}.

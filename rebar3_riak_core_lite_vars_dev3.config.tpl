@@ -1,4 +1,0 @@
-{node, "{{ name }}3@127.0.0.1"}.
-
-{web_port,          8398}.
-{handoff_port,      8399}.
