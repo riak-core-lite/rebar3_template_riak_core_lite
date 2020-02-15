@@ -79,7 +79,7 @@ devrel-cluster-commit:
 	$(BASEDIR)/_build/dev1/rel/{{ name }}/bin/$(APPNAME) eval 'riak_core_claimant:commit()'
 
 devrel-status:
-	$(BASEDIR)/_build/dev1/rel/{{ name }}/bin/$(APPNAME)-admin member-status
+	$(BASEDIR)/_build/dev1/rel/{{ name }}/bin/$(APPNAME) eval 'riak_core_console:member_status([])'
 
 devrel-ping:
 	for d in $(BASEDIR)/_build/dev*; do $$d/rel/{{ name }}/bin/$(APPNAME) ping; true; done

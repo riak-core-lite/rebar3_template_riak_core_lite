@@ -1,5 +1,5 @@
 %% -*- mode: erlang; -*-
-{deps, [{riak_core, {pkg, riak_core_lite}}]}.
+{deps, [{riak_core, {pkg, riak_core_lite}}, riak_core_lite_util]}.
 
 {relx, [{release, { {{ name }} , "0.1.0"},
          [{{ name }}, sasl]},
