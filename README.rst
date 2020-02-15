@@ -24,7 +24,7 @@ Use
     ./_build/default/rel/ricor/bin/ricor console
 
     (ricor@127.0.0.1)1> ricor:ping().
-    {pong,981946412581700398168100746981252653831329677312}
+    {pong, 'ricor@127.0.0.1', 981946412581700398168100746981252653831329677312}
 
 Author
 ------
